@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"time"
+	"fmt"
 
 	"contrib.go.opencensus.io/exporter/stackdriver"
 	"contrib.go.opencensus.io/exporter/stackdriver/monitoredresource"
@@ -31,12 +32,18 @@ func Exporter(ctx context.Context, cfg opencensus.Config) (*stackdriver.Exporter
 		labels.Set(k, v, "")
 	}
 
+	res := monitoredresource.Autodetect()
+	if res != nil {
+		resType, labels := res.MonitoredResource()
+		fmt.Println("stackdriver exporter: detected:", resType, labels)
+	}
+
 	return stackdriver.NewExporter(stackdriver.Options{
 		ProjectID:               cfg.Exporters.Stackdriver.ProjectID,
 		MetricPrefix:            cfg.Exporters.Stackdriver.MetricPrefix,
 		BundleDelayThreshold:    time.Duration(cfg.ReportingPeriod) * time.Second,
 		BundleCountThreshold:    cfg.SampleRate,
 		DefaultMonitoringLabels: labels,
-		MonitoredResource:       monitoredresource.Autodetect(),
+		MonitoredResource:       res,
 	})
 }
