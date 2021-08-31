@@ -20,8 +20,13 @@ import (
 
 // New wraps a handler factory adding some simple instrumentation to the generated handlers
 func New(hf krakendgin.HandlerFactory) krakendgin.HandlerFactory {
+	return NewWithPropagation(hf, nil)
+}
+
+// NewWithPropagation wraps a handler factory adding some simple instrumentation to the generated handlers, with the provided propagation
+func NewWithPropagation(hf krakendgin.HandlerFactory, prop propagation.HTTPFormat) krakendgin.HandlerFactory {
 	return func(cfg *config.EndpointConfig, p proxy.Proxy) gin.HandlerFunc {
-		return HandlerFunc(cfg, hf(cfg, p), nil)
+		return HandlerFunc(cfg, hf(cfg, p), prop)
 	}
 }
 
