@@ -9,6 +9,7 @@ import (
 	"go.opencensus.io/plugin/ochttp"
 	"go.opencensus.io/tag"
 	"go.opencensus.io/trace"
+	"go.opencensus.io/trace/propagation"
 )
 
 var defaultClient = &http.Client{Transport: &ochttp.Transport{}}
@@ -25,6 +26,10 @@ func HTTPRequestExecutor(clientFactory transport.HTTPClientFactory) transport.HT
 }
 
 func HTTPRequestExecutorFromConfig(clientFactory transport.HTTPClientFactory, cfg *config.Backend) transport.HTTPRequestExecutor {
+	return HTTPRequestExecutorFromConfigAndPropagation(clientFactory, cfg, nil)
+}
+
+func HTTPRequestExecutorFromConfigAndPropagation(clientFactory transport.HTTPClientFactory, cfg *config.Backend, prop propagation.HTTPFormat) transport.HTTPRequestExecutor {
 	if !IsBackendEnabled() {
 		return transport.DefaultHTTPRequestExecutor(clientFactory)
 	}
@@ -37,7 +42,7 @@ func HTTPRequestExecutorFromConfig(clientFactory transport.HTTPClientFactory, cf
 				func(r *http.Request) tag.Mutator { return tag.Upsert(ochttp.KeyClientPath, pathExtractor(r)) },
 				func(r *http.Request) tag.Mutator { return tag.Upsert(ochttp.KeyClientMethod, req.Method) },
 			}
-			client.Transport = &Transport{Base: client.Transport, tags: tags}
+			client.Transport = &Transport{Base: client.Transport, Propagation: prop, tags: tags}
 		}
 
 		return client.Do(req.WithContext(trace.NewContext(ctx, fromContext(ctx))))
