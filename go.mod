@@ -10,7 +10,7 @@ require (
 	contrib.go.opencensus.io/exporter/stackdriver v0.7.0
 	contrib.go.opencensus.io/exporter/zipkin v0.0.0-20190424224031-c96617f51dc6
 	github.com/DataDog/opencensus-go-exporter-datadog v0.0.0-20191210083620-6965a1cfed68
-	github.com/aws/aws-sdk-go v1.15.31
+	github.com/aws/aws-sdk-go v1.34.0
 	github.com/gin-gonic/gin v1.7.7
 	github.com/kpacha/opencensus-influxdb v0.0.0-20180520162117-1b490a38de4c
 	github.com/luraproject/lura/v2 v2.0.5
@@ -27,7 +27,6 @@ require (
 	github.com/beorn7/perks v1.0.0 // indirect
 	github.com/census-instrumentation/opencensus-proto v0.2.1 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
-	github.com/go-ini/ini v1.37.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
 	github.com/go-playground/validator/v10 v10.9.0 // indirect
@@ -37,7 +36,7 @@ require (
 	github.com/googleapis/gax-go/v2 v2.0.5 // indirect
 	github.com/grpc-ecosystem/grpc-gateway v1.13.0 // indirect
 	github.com/influxdata/influxdb v1.5.2 // indirect
-	github.com/jmespath/go-jmespath v0.0.0-20160202185014-0b12d6b521d8 // indirect
+	github.com/jmespath/go-jmespath v0.3.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/krakendio/flatmap v1.1.1 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
@@ -49,7 +48,6 @@ require (
 	github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4 // indirect
 	github.com/prometheus/common v0.4.1 // indirect
 	github.com/prometheus/procfs v0.0.6 // indirect
-	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/tinylib/msgp v1.1.2 // indirect
 	github.com/ugorji/go/codec v1.2.6 // indirect
 	github.com/valyala/fastrand v1.1.0 // indirect
@@ -64,6 +62,5 @@ require (
 	google.golang.org/genproto v0.0.0-20200302123026-7795fca6ccb1 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/DataDog/dd-trace-go.v1 v1.22.0 // indirect
-	gopkg.in/ini.v1 v1.51.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
