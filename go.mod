@@ -23,7 +23,7 @@ require (
 require (
 	cloud.google.com/go v0.38.0 // indirect
 	github.com/DataDog/datadog-go v3.4.1+incompatible // indirect
-	github.com/apache/thrift v0.12.0 // indirect
+	github.com/apache/thrift v0.13.0 // indirect
 	github.com/beorn7/perks v1.0.0 // indirect
 	github.com/census-instrumentation/opencensus-proto v0.2.1 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
