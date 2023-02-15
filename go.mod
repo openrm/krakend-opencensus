@@ -15,7 +15,7 @@ require (
 	github.com/kpacha/opencensus-influxdb v0.0.0-20180520162117-1b490a38de4c
 	github.com/luraproject/lura/v2 v2.0.5
 	github.com/openzipkin/zipkin-go v0.1.6
-	github.com/prometheus/client_golang v0.9.4
+	github.com/prometheus/client_golang v1.11.1
 	go.opencensus.io v0.22.3
 	google.golang.org/grpc v1.27.1
 )
@@ -24,8 +24,9 @@ require (
 	cloud.google.com/go v0.38.0 // indirect
 	github.com/DataDog/datadog-go v3.4.1+incompatible // indirect
 	github.com/apache/thrift v0.12.0 // indirect
-	github.com/beorn7/perks v1.0.0 // indirect
+	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/census-instrumentation/opencensus-proto v0.2.1 // indirect
+	github.com/cespare/xxhash/v2 v2.1.1 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-ini/ini v1.37.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
@@ -46,9 +47,9 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/philhofer/fwd v1.0.0 // indirect
-	github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4 // indirect
-	github.com/prometheus/common v0.4.1 // indirect
-	github.com/prometheus/procfs v0.0.6 // indirect
+	github.com/prometheus/client_model v0.2.0 // indirect
+	github.com/prometheus/common v0.26.0 // indirect
+	github.com/prometheus/procfs v0.6.0 // indirect
 	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/tinylib/msgp v1.1.2 // indirect
 	github.com/ugorji/go/codec v1.2.6 // indirect
