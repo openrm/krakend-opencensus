@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/kpacha/opencensus-influxdb"
-	opencensus "github.com/krakend/krakend-opencensus/v2"
+	opencensus "github.com/openrm/krakend-opencensus/v2"
 )
 
 func init() {
