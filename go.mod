@@ -1,4 +1,4 @@
-module github.com/openrm/krakend-opencensus/v2
+module github.com/krakend/krakend-opencensus/v2
 
 go 1.26.0
 
